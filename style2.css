@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+
+    --animation-time: 1s;
+    --animation-time2: 1s;
+}
+
+.bg-img{
+    background-image: url(img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    width: 100vw;
+    height: 100vh;
+}
+
+.left{
+    position: absolute;
+    top: -50%;
+    transform: translate(0,-50%);
+    height: 85%;
+    width: 25%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 1rem;
+    border-radius: 5px;
+    animation: dropDown;
+    animation-duration: var(--animation-time);
+    animation-timing-function: cubic-bezier(0.03, 0.36, 0.35, 1.2);
+    animation-fill-mode: forwards;
+    text-align: center;
+}
+
+.left >h2{
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.left > .text{
+    margin: 1rem;
+    font-size: 1.3rem;
+}
+
+.text p {
+    margin-bottom: 20px; /* Dodanie odstępu na dole każdego paragrafu */
+}
+
+
+.nav-bar{
+    position: absolute;
+    top: -30%;
+    left: 30%;
+    transform: translate(0,-50%);
+    width: 67%;
+    height: 10%;
+    margin: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    animation: dropDown2 calc(var(--animation-time2));
+    animation-timing-function: cubic-bezier(0.03, 0.36, 0.35, 1.2);
+    animation-delay: var(--animation-time);
+    animation-fill-mode: forwards;
+
+    display: flex;
+    text-align: center;
+}
+
+@keyframes dropDown {
+    100% {
+        top: 48%; /* Nowa pozycja na 100% animacji */
+        transform: translate(0, -50%); /* Pozostawienie transformacji */
+        /* Dodaj inne właściwości, które mają się zmienić w trakcie animacji */
+    }
+}
+
+@keyframes dropDown2 {
+    100% {
+        top: 10.5%; /* Nowa pozycja na 100% animacji */
+        transform: translate(0, -50%); /* Pozostawienie transformacji */
+        /* Dodaj inne właściwości, które mają się zmienić w trakcie animacji */
+    }
+}
+
+.list-box{
+    width: 100%;
+    display: grid;
+    place-items: center left;
+}
+
+.list-box ul.menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    font-size: 2rem;
+    height: 100%;
+}
+
+.menu{
+    width: 50%;
+}
+
+.menu li {
+    display: inline; /* Ustawienie elementów listy obok siebie */
+    border-right: 2px solid #333; /* Dodanie poziomej linii pomiędzy elementami */
+    width: 100%; /* Odstęp między liniami */
+}
+
+button{
+    border: none;
+    height: 100%;
+    width: 100%;
+    font-size: 2rem;
+    background-color: transparent;
+}
